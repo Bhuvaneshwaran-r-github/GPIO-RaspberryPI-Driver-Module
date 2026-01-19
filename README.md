@@ -29,10 +29,10 @@ A Linux kernel character device driver for Raspberry Pi 3B+ providing GPIO contr
 make
 
 # Load the module
-sudo insmod file1.ko
+sudo insmod gpio_driver_v1.ko
 
 # Verify module is loaded
-lsmod | grep file1
+lsmod | grep gpio_driver
 
 # Check kernel messages
 dmesg | tail
@@ -44,12 +44,7 @@ dmesg | tail
 
 ```bash
 # The driver creates /dev/ext_device
-
-# Write to GPIO (from user application)
-./app1
-
-# Read GPIO states
-./app2
+# Use custom applications to interact with GPIO
 ```
 
 ### GPIO Control Values
@@ -67,8 +62,7 @@ dmesg | tail
 
 | File | Description |
 |------|-------------|
-| `file1.c`, `file2.c` | Kernel module driver implementations |
-| `app1.c`, `app2.c` | User-space test applications |
+| `gpio_driver_v1.c` | Kernel module driver implementation |
 | `Makefile` | Build configuration |
 
 ## How It Works
@@ -82,5 +76,5 @@ dmesg | tail
 ## Unloading the Module
 
 ```bash
-sudo rmmod file1
+sudo rmmod gpio_driver_v1
 ```

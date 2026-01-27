@@ -1,6 +1,6 @@
 # 💡 GPIO Driver Module for Raspberry Pi
 
-A **Linux kernel character device driver** that provides user-space control over Raspberry Pi GPIO pins through a device file interface.
+A **Linux kernel character device driver** that provides user-space control over Raspberry Pi GPIO pins through device file interface.
 
 ---
 
